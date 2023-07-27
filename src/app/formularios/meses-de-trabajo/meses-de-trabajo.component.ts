@@ -25,6 +25,7 @@ export class MesesDeTrabajoComponent {
     { name: 'Julio' },
     { name: 'Agosto' },
     { name: 'Septiembre' },
+    { name: 'Octubre' },
     { name: 'Noviembre' },
     { name: 'Diciembre' },
   ];
