@@ -1,0 +1,56 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+.formulario-meses-trabajo ng-select {
+  width: 25rem;
+}
+@media (min-width: 768px) {
+  .formulario-meses-trabajo ng-select {
+    width: 30rem;
+  }
+}
+.formulario-meses-trabajo .seleccionados {
+  color: var(--blanco);
+}
+.formulario-meses-trabajo {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.formulario-meses-trabajo .titulo {
+  font-size: 5rem;
+  color: var(--blanco);
+}
+.formulario-meses-trabajo .parrafo {
+  font-size: 2.4rem;
+  color: var(--blanco);
+  text-align: center;
+}
+.formulario-meses-trabajo .nombre {
+  background-color: transparent;
+  font-size: 2.4rem;
+  border: none;
+  color: var(--blanco);
+  border-bottom: 1px solid var(--blanco);
+}
+@media (min-width: 768px) {
+  .formulario-meses-trabajo .nombre {
+    width: 40rem;
+  }
+}
+.formulario-meses-trabajo .nombre::placeholder {
+  font-size: 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+.formulario-meses-trabajo .nombre:focus {
+  background-color: transparent;
+  outline: none;
+}
+
+input::-webkit-textfield-decoration-container {
+  color: white;
+}
+

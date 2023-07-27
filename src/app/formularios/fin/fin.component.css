@@ -1,0 +1,24 @@
+.finalizado {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .finalizado .titulo {
+    font-size: 5rem;
+    color: var(--blanco);
+  }
+  .finalizado .parrafo {
+    font-size: 2.4rem;
+    color: var(--blanco);
+    text-align: center;
+    margin: 0;
+  }
+  @media (min-width: 768px) {
+    .finalizado .parrafo span{
+        font-size: 5rem;
+    }
+  }

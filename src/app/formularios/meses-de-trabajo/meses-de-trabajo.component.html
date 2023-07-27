@@ -1,0 +1,16 @@
+<div class="contenedor formulario-meses-trabajo animate__animated animate__backInDown">
+  <h2 class="titulo">Selecciona los meses de trabajo</h2>
+  <p class="parrafo">A continuación selecciona los meses que deseas generar el reporte.</p>
+  <!--Using ng-option and for loop-->
+  <ng-select [(ngModel)]="mesesTrabajo" [multiple]="true" [maxSelectedItems]="3" placeholder="Meses de trabajo">
+    <ng-option *ngFor="let mes of meses" [value]="mes.name">{{mes.name}}</ng-option>
+  </ng-select>
+  <h2 class="seleccionados">{{mesesTrabajo}}</h2>
+  <div class="botones">
+    <a [routerLink]="[ '/empresa' ]" class="regresar">Regresar</a>
+    <button class="boton" (click)="validar()">Continuar</button>
+  </div>
+
+  <!--Using items input-->
+
+</div>

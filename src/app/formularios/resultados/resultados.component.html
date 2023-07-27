@@ -1,0 +1,61 @@
+<div class="contenedor impresion" #divExportar>
+    <div class="header">
+        <div class="year-control">
+            <h4>{{'Control de horarios' | uppercase }}</h4>
+            <p>{{year}}</p>
+        </div>
+        <div class="datos-trabajo">
+            <div class="nombre-y-apellidos-label">
+                <p>{{'nombre y apellidos'| uppercase}}</p>
+
+            </div>
+            <div class="nombre">
+                <p>{{nombre | titlecase}}</p>
+            </div>
+            <div class="centro-trabajo">
+                <p>{{'centro de trabajo:'| uppercase}}<span>{{nombreEmpres}}</span></p>
+            </div>
+        </div>
+        <div class="entrada-salida">
+            <div class="nombre-y-apellidos-label">
+                <div class="entrada">
+                    <p>{{'entrada'| uppercase}}</p>
+                </div>
+                <div class="salida">
+                    <p>{{'salida'| uppercase}}</p>
+                </div>
+
+            </div>
+            <div class="nombre">
+            </div>
+            <div class="centro-trabajo">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="assets/img/logo.png">
+        </div>
+    </div>
+    <div class="tabla1">
+        <table *ngFor="let item of mesesTrabajo; let i as index">
+            <thead class="encabezado-tabla">
+                <tr>
+                    <th>{{i}} {{year}}</th>
+                    <th class="hEntrada">HORA <span>ENTRADA</span></th>
+                    <th class="hSalida">HORA <span>SALIDA</span></th>
+                    <th>FIRMA</th>
+                </tr>
+            </thead>
+            <tbody class="cuerpo-tabla">
+                <tr *ngFor="let item of obtenerFechaFormato(i)" >
+                    <td  >{{item}}</td>
+                    <td class="hora-entrada">{{obtenerHoraEntrada(item)}}</td>
+                    <td class="hora-salida">{{obtenerHoraSalida(item)}}</td>
+                    <td class="firma">{{firma|titlecase}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>

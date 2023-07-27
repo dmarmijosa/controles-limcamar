@@ -1,0 +1,31 @@
+<div  class="horario contenedor animate__animated animate__fadeInRightBig">
+    <h2 class="titulo">Perfecto ahora centremonos en el horario.</h2>
+    <p class="parrafo">Paso 1: Selecciona los días en los que has trabajado.</p>
+    <p class="parrafo">Paso 2: Escoge la hora de entrada y salida para cada día seleccionado.</p>
+    <p class="parrafo">Paso 3: Haz clic en 'Guardar horas' para guardar las horas en los dias seleccionados.</p>
+    <p class="parrafo">Paso 4: Cuando tengas tu horario completo le das en continuar.</p>
+
+    <fieldset class="formulario">
+        <ng-select [items]="dias" [(ngModel)]="diasSeleccionados" [multiple]="true"
+            placeholder="Selecciona días"></ng-select>
+            <span class="error" *ngIf="error">¡ Falta seleccionar los dias !</span>
+            <div class="horas">
+                <div class="hora-ingreso">
+                    <label for="entrada">Hora de entrada.</label>
+                    <input value="09:00" id="entrada" type="time" [(ngModel)]="entrada" placeholder="Hora de entrada">
+                </div>
+                <div class="hora-ingreso">
+                    <label for="salida">Hora de salida.</label>
+                    <input value="22:00" id="salida" type="time" [(ngModel)]="salida" placeholder="Hora de salida">
+                </div>
+                
+            </div>
+            <span class="error" *ngIf="errorHoras">¡ Revisa tus horas seleccionadas !</span>
+        <button class="boton" (click)="establecerHorario()">Guardar horas</button>
+    </fieldset>
+    <div class="botones">
+        <a [routerLink]="[ '/meses-trabajo' ]" class="regresar">Regresar</a>
+        <button class="boton" (click)="validar()">Descargar</button>
+    </div>
+
+</div>

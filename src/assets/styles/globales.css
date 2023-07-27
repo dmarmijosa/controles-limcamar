@@ -1,0 +1,55 @@
+:root {
+    --blanco: #fff;
+    --negro: #111111;
+    --gris: #343a40;
+  
+    --azul: #0071b7;
+    --blanco: #fff;
+    --naranja: #ff4f1e;
+    --fuentePrincipal: 'Roboto', sans-serif;
+  }
+  html {
+    background-color: var(--azul);
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  /** Globales **/
+  body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+  }
+  h1,
+  h2,
+  h3 {
+    font-weight: 900;
+    margin: 2rem 0;
+  }a {
+    text-decoration: none;
+  }
+  img {
+    max-width: 100%;
+  }
+  .contenedor {
+    max-width: 120rem;
+    margin-inline: auto;
+    width: 90%;
+  }
+  #swal2-title{
+    font-size: 3rem;
+  }
+  div:where(.swal2-container).swal2-center>.swal2-popup{
+    width: 40rem;
+  }
+  #swal2-html-container{
+    font-size: 2rem;
+  }
+  div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm{
+    padding: 1rem 8rem;
+    font-size: 2rem !important; 
+  }

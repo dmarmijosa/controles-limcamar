@@ -1,0 +1,88 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+.horario ng-select {
+  margin-top: 1rem;
+  width: 25rem;
+}
+@media (min-width: 768px) {
+  .horario ng-select {
+    width: 30rem;
+  }
+}
+.horario .seleccionados {
+  color: var(--blanco);
+}
+.horario {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.horario .titulo {
+  font-size: 3rem;
+  color: var(--blanco);
+}
+@media (min-width: 768px) {
+  .horario .titulo{
+    margin-top: 1rem;
+    font-size: 5rem;
+  }
+}
+.horario .parrafo {
+  font-size: 1.8rem;
+  color: var(--blanco);
+  text-align: center;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .horario .parrafo{
+    font-size: 2.4rem;
+  }
+}
+.horario input {
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+}
+.horario input::placeholder {
+  font-size: 2rem;
+}
+.horario .horas {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .horario .horas {
+    flex-direction: row;
+  }
+}
+.horas .hora-ingreso {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.3rem;
+}
+.hora-ingreso label {
+  color: var(--blanco);
+  font-size: 1.7rem;
+}
+.horario .formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+input::-webkit-textfield-decoration-container {
+  color: white;
+}
+.error{
+  font-size: 1.8rem;
+  color: #FF7F50;
+  text-align: center;
+  margin: 0;
+  line-height: 0;
+}

@@ -1,0 +1,6 @@
+<div class="contenedor formulario-nombre animate__animated animate__fadeInRightBig">
+    <h2 class="titulo">Vale. ¿Cual es tu nombre y apellido? </h2>
+    <p class="parrafo">Recuerda que este es el nombre tal va a  cual aparecera en la plantilla final.</p>
+    <input #nombreInput autocomplete="off" name="nombre" [(ngModel)]="nombre" class="nombre" type="text" placeholder="Aqui va tu nombre">
+    <button class="boton" (click)="validarNombre()">Aceptar</button>
+</div>
