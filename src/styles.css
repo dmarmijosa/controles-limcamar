@@ -3,12 +3,14 @@
 .regresar {
   color: var(--negro);
   padding: 1rem 4rem;
+  min-width: 15rem;
   background-color: var(--blanco);
   border-radius: 4px;
   box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.5);
 }
 .boton {
   padding: 1rem 4rem;
+  min-width: 15rem;
   border: gainsboro 1px solid;
   border-radius: 4px;
   box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.5);
