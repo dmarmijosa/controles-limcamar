@@ -17,7 +17,6 @@ export class CentroTrabajoComponent {
   validarEmpresa() {
     const contieneNumeros = /\d/.test(this.nombre_empresa);
     if (contieneNumeros || this.nombre_empresa.length <= 3) {
-      console.log('no validp');
       return;
     }
     this.servicio.setNombreEmpresa(this.nombre_empresa);

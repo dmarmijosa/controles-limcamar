@@ -24,7 +24,6 @@ export class FormularioComponent  {
   validarNombre() {
     const contieneNumeros = /\d/.test(this.nombre);
     if (contieneNumeros || this.nombre.length <= 3) {
-      console.log('no validp');
       return;
     }
     this.servicio.setNombre(this.nombre);

@@ -24,12 +24,7 @@ export class ResultadosComponent implements OnInit, AfterViewInit {
   horario: Horario = {};
   year: number = new Date().getFullYear();
   nombre: string = this.service.getNombre() || '';
-  firma: string =
-    this.service.getNombre()?.split(' ').length == 1
-      ? ` ${this.service.getNombre()?.split(' ')[0]}`
-      : ` ${this.service.getNombre()?.split(' ')[0]} ${
-          this.service.getNombre()?.split(' ')[1].toUpperCase
-        }` || '';
+  firma: string = this.service.getNombre()?.split(' ')[0] || '';
   nombreEmpres: string = this.service.getNombreEmpresa() || '';
   mesesTrabajo: string[] = this.service.getmesesdeTrabajo();
   diasMes = new Date(this.year).getDate();
@@ -45,7 +40,6 @@ export class ResultadosComponent implements OnInit, AfterViewInit {
       const parametros = params['objeto'];
       this.horario = JSON.parse(parametros);
     });
-    console.log(this.horario);
   }
   obtenerFechaFormato(mes: string): string[] {
     let formato: string[] = [];
@@ -79,9 +73,6 @@ export class ResultadosComponent implements OnInit, AfterViewInit {
       // Ojo, hay que restarle 1 para obtener el mes correcto
       let indice = new Date(this.year, mesNumber - 1, dia).getDay();
       formato.push(`${dia}/${mesNumber}/${this.year}`);
-      console.log(
-        `El día número ${dia} del mes ${mesNumber} del año ${this.year} es ${diasSemana[indice]}`
-      );
     }
     return formato;
   }

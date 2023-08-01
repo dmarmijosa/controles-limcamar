@@ -47,7 +47,6 @@ export class HorarioComponent {
       }, 5000);
       return;
     }
-    console.log(this.entrada);
     if(!this.entrada || !this.salida){
         this.errorHoras = true;
         setTimeout(() => {
