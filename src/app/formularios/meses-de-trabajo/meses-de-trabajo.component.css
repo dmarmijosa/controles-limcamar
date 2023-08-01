@@ -9,6 +9,8 @@
 }
 .formulario-meses-trabajo .seleccionados {
   color: var(--blanco);
+  font-size: 1.8rem;
+  
 }
 .formulario-meses-trabajo {
   height: 100vh;

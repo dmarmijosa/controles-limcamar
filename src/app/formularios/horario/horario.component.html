@@ -1,10 +1,12 @@
 <div  class="horario contenedor animate__animated animate__backInDown">
     <h2 class="titulo">Perfecto ahora centremonos en el horario.</h2>
+<div class="pasos">
     <p class="parrafo">Paso 1: Selecciona los días en los que has trabajado.</p>
     <p class="parrafo">Paso 2: Escoge la hora de entrada y salida para cada día seleccionado.</p>
     <p class="parrafo">Paso 3: Haz clic en 'Guardar horas' para guardar las horas en los dias seleccionados.</p>
     <p class="parrafo">Paso 4: Cuando tengas tu horario completo le das en continuar.</p>
 
+</div>
     <fieldset class="formulario">
         <ng-select [items]="dias" [(ngModel)]="diasSeleccionados" [multiple]="true"
             placeholder="Selecciona días"></ng-select>

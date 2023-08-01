@@ -15,14 +15,16 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  align-items: center;
+  column-gap: 2rem;
   justify-content: center;
-  text-align: center;
+}
+.pasos .parrafo{
+  width: 90%;
 }
 .horario .titulo {
-  font-size: 3rem;
+  font-size: 2.4rem;
   color: var(--blanco);
+  text-align: center;
 }
 @media (min-width: 768px) {
   .horario .titulo{
@@ -31,10 +33,13 @@
   }
 }
 .horario .parrafo {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: var(--blanco);
-  text-align: center;
+  text-align: justify;
   margin: 0;
+}
+.pasos .parrafo{
+  margin-bottom: 2rem;
 }
 @media (min-width: 768px) {
   .horario .parrafo{
@@ -66,6 +71,7 @@
   justify-content: flex-end;
   gap: 2.3rem;
 }
+
 .hora-ingreso label {
   color: var(--blanco);
   font-size: 1.7rem;
@@ -74,7 +80,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .horario .formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
 }
 .hora-salida {
   display: flex;
@@ -85,7 +99,12 @@
   color: var(--blanco);
   font-size: 1.7rem;
 }
-
+.horas .hora-ingreso input{
+  width: 15rem;
+}
+.horas .hora-salida input{
+  width: 15rem;
+}
 input::-webkit-textfield-decoration-container {
   color: white;
 }
@@ -99,4 +118,7 @@ input::-webkit-textfield-decoration-container {
 .botones .regresar{
   width: 15rem;
 
+}
+.botones{
+  margin: 2rem 0;
 }

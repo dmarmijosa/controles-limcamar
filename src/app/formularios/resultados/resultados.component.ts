@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Horario } from 'src/app/interfaces/horario.interface';
 import { ServiciosService } from 'src/app/services/servicios.service';
@@ -11,24 +17,28 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./resultados.component.css'],
 })
 export class ResultadosComponent implements OnInit, AfterViewInit {
-  @ViewChild('divExportar') divParaExportar!:ElementRef;
+  @ViewChild('divExportar') divParaExportar!: ElementRef;
   diasDelMes: number[] = Array(31)
     .fill(0)
     .map((x, i) => i);
   horario: Horario = {};
   year: number = new Date().getFullYear();
   nombre: string = this.service.getNombre() || '';
-  firma:string  = this.service.getNombre()?.split(' ')[0] || '';
+  firma: string =
+    this.service.getNombre()?.split(' ').length == 1
+      ? ` ${this.service.getNombre()?.split(' ')[0]}`
+      : ` ${this.service.getNombre()?.split(' ')[0]} ${
+          this.service.getNombre()?.split(' ')[1].toUpperCase
+        }` || '';
   nombreEmpres: string = this.service.getNombreEmpresa() || '';
   mesesTrabajo: string[] = this.service.getmesesdeTrabajo();
   diasMes = new Date(this.year).getDate();
   constructor(
-    private route:Router,
+    private route: Router,
     private router: ActivatedRoute,
     private service: ServiciosService
   ) {
     //document.documentElement.style.setProperty('--azul','white');
-
   }
   ngOnInit(): void {
     this.router.queryParams.subscribe((params) => {
@@ -82,7 +92,15 @@ export class ResultadosComponent implements OnInit, AfterViewInit {
       parseInt(fechaPartes[1]) - 1,
       parseInt(fechaPartes[0])
     );
-    const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+    const diasSemana = [
+      'Domingo',
+      'Lunes',
+      'Martes',
+      'Miércoles',
+      'Jueves',
+      'Viernes',
+      'Sábado',
+    ];
     const indice = fechaObj.getDay();
     const dia = diasSemana[indice];
     return this.horario[dia]?.entrada || '-------';
@@ -94,30 +112,38 @@ export class ResultadosComponent implements OnInit, AfterViewInit {
       parseInt(fechaPartes[1]) - 1,
       parseInt(fechaPartes[0])
     );
-    const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+    const diasSemana = [
+      'Domingo',
+      'Lunes',
+      'Martes',
+      'Miércoles',
+      'Jueves',
+      'Viernes',
+      'Sábado',
+    ];
     const indice = fechaObj.getDay();
     const dia = diasSemana[indice];
     return this.horario[dia]?.salida || '-------';
   }
-  
+
   ngAfterViewInit() {
     // Generar y descargar automáticamente el PDF cuando el HTML esté listo
     this.exportarAPDF();
-    this.route.navigate(['/fin'])
+    this.route.navigate(['/fin']);
   }
 
   exportarAPDF() {
     const doc = new jsPDF({
       orientation: 'landscape', // Orientación horizontal
       unit: 'mm',
-      format: 'a4'
+      format: 'a4',
     });
     const content = this.divParaExportar.nativeElement;
 
-    html2canvas(content).then(canvas => {
+    html2canvas(content).then((canvas) => {
       const imgData = canvas.toDataURL('image/png');
       const imgWidth = doc.internal.pageSize.getWidth() + 10; // Aumentar 50 mm (5 cm)
-      const imgHeight = canvas.height * imgWidth / canvas.width;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
       // Generar el PDF ajustado al contenido del div sin escalado
       doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
@@ -126,5 +152,4 @@ export class ResultadosComponent implements OnInit, AfterViewInit {
       doc.save('control_horarios.pdf');
     });
   }
-
 }
